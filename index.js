@@ -1,5 +1,7 @@
 const prompt = require("prompt-sync")();
 
+while(true) {
+
 function adicao(a, b) {
   return a + b;
 }
@@ -16,19 +18,17 @@ function multiplicacao(a, b) {
   return a * b;
 }
 function porcentagem(a, b) {
-    return (b / a) * 100;
+    return (a * b) / 100;
 }
+
 function pergunta() {
-  console.log("1: Adição");
-  console.log("2: Subtração");
-  console.log("3: Divisão");
-  console.log("4: Multiplicação");
-  console.log("5: Porcentagem");
+  console.log("[+] [-] [/] [*] [%]");
 
   let operacao = prompt("Entre as opções acima escolha uma operação: ");
 
   let num1 = prompt("Escolha o primeiro número: ");
   let num2 = prompt("Escolha o segundo número: ");
+
 
   let a = parseFloat(num1);
   let b = parseFloat(num2);
@@ -36,19 +36,19 @@ function pergunta() {
   let resultado;
 
   switch (operacao) {
-    case "1":
+    case "+":
       resultado = adicao(a, b);
       break;
-    case "2":
+    case "-":
       resultado = subtracao(a, b);
       break;
-    case "3":
+    case "/":
       resultado = divisao(a, b);
       break;
-    case "4":
+    case "*":
       resultado = multiplicacao(a, b);
       break;
-      case "5":
+      case "%":
       resultado = porcentagem(a, b);
       break;
     default:
@@ -58,3 +58,4 @@ function pergunta() {
   console.log(`Resultado: ${resultado}`);
 }
 pergunta();
+}
